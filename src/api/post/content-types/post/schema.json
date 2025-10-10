@@ -1,0 +1,42 @@
+{
+    "collectionName": "posts",
+    "info": {
+        "singularName": "post",
+        "pluralName": "posts",
+        "displayName": "Post",
+        "description": "Artículos técnicos del blog"
+    },
+    "attributes": {
+        "title": { "type": "string", "required": true },
+        "slug": { "type": "uid", "targetField": "title", "required": true },
+        "excerpt": { "type": "text" },
+        "content": { "type": "richtext" },
+        "coverImage": {
+            "type": "media",
+            "multiple": false,
+            "required": true
+        },
+        "tags": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::tag.tag"
+        },
+        "technologies": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::technology.technology"
+        },
+        "readingTime": { "type": "integer" },
+        "author": {
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.author"
+        },
+        "seo": {
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.seo"
+        },
+        "publishedAt": { "type": "datetime" }
+    }
+}

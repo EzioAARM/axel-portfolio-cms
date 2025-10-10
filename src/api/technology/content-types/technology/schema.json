@@ -1,0 +1,13 @@
+{
+    "collectionName": "technologies",
+    "info": {
+        "singularName": "technology",
+        "pluralName": "technologies",
+        "displayName": "Technology"
+    },
+    "attributes": {
+        "name": { "type": "string", "required": true },
+        "icon": { "type": "string" },
+        "website": { "type": "string" }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "kind": "singleType",
+    "collectionName": "abouts",
+    "info": {
+        "singularName": "about",
+        "pluralName": "abouts",
+        "displayName": "About",
+        "description": "Información personal y profesional"
+    },
+    "attributes": {
+        "profileImage": { "type": "media", "multiple": false },
+        "shortBio": { "type": "text" },
+        "longBio": { "type": "richtext" },
+        "skills": {
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.skill"
+        },
+        "resumeUrl": { "type": "string" },
+        "socialLinks": {
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.social-link"
+        },
+        "seo": {
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.seo"
+        }
+    }
+}
