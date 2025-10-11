@@ -1,30 +1,94 @@
 {
-    "kind": "singleType",
-    "collectionName": "home-pages",
-    "info": {
-        "singularName": "home",
-        "pluralName": "homes",
-        "displayName": "Home",
-        "description": "Contenido de la página principal"
-    },
-    "attributes": {
-        "heroTitle": { "type": "string", "required": true },
-        "heroSubtitle": { "type": "text" },
-        "heroImage": { "type": "media", "multiple": false },
-        "featuredProjects": {
-            "type": "relation",
-            "relation": "oneToMany",
-            "target": "api::project.project"
-        },
-        "latestPosts": {
-            "type": "relation",
-            "relation": "oneToMany",
-            "target": "api::post.post"
-        },
-        "seo": {
-            "type": "component",
-            "repeatable": false,
-            "component": "shared.seo"
-        }
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
     }
+  },
+  "attributes": {
+    "Headline": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "HasFeatured": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": false,
+      "default": false
+    },
+    "Featured": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "HasFeatured"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "SubLine": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "HasCarousel": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": true
+    },
+    "Carousel": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "HasCarousel"
+            },
+            true
+          ]
+        }
+      },
+      "component": "shared.carousel",
+      "repeatable": true
+    }
+  }
 }

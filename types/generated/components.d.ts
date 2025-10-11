@@ -13,6 +13,19 @@ export interface SharedAuthor extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousels';
+  info: {
+    displayName: 'Carousel';
+  };
+  attributes: {
+    alt: Schema.Attribute.String & Schema.Attribute.Required;
+    caption: Schema.Attribute.String;
+    url: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -59,6 +72,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.author': SharedAuthor;
+      'shared.carousel': SharedCarousel;
       'shared.seo': SharedSeo;
       'shared.skill': SharedSkill;
       'shared.social-link': SharedSocialLink;
