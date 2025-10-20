@@ -89,6 +89,51 @@
       },
       "component": "shared.carousel",
       "repeatable": true
+    },
+    "hasNewsletter": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": true
+    },
+    "newsletterTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasNewsletter"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "newsletterDescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasNewsletter"
+            },
+            true
+          ]
+        }
+      }
     }
   }
 }
