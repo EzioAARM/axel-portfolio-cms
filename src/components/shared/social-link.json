@@ -1,12 +1,18 @@
 {
-    "collectionName": "components_shared_social_links",
-    "info": {
-        "displayName": "Social Link",
-        "description": "Red social o enlace externo"
+  "collectionName": "components_shared_social_links",
+  "info": {
+    "displayName": "Social Link",
+    "description": "Red social o enlace externo"
+  },
+  "attributes": {
+    "Platform": {
+      "type": "string"
     },
-    "attributes": {
-        "platform": { "type": "string" },
-        "url": { "type": "string" },
-        "icon": { "type": "string" }
+    "Url": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "string"
     }
+  }
 }

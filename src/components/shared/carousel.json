@@ -1,15 +1,16 @@
 {
   "collectionName": "components_shared_carousels",
   "info": {
-    "displayName": "Carousel"
+    "displayName": "Image",
+    "icon": "picture"
   },
   "options": {},
   "attributes": {
-    "alt": {
+    "Alt": {
       "type": "string",
       "required": true
     },
-    "url": {
+    "Url": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -19,7 +20,7 @@
         "videos"
       ]
     },
-    "caption": {
+    "Caption": {
       "type": "string"
     }
   },

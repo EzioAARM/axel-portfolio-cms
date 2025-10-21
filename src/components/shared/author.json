@@ -1,12 +1,21 @@
 {
-    "collectionName": "components_shared_authors",
-    "info": {
-        "displayName": "Author",
-        "description": "Información del autor de posts o proyectos"
+  "collectionName": "components_shared_authors",
+  "info": {
+    "displayName": "Author",
+    "description": "Información del autor de posts o proyectos",
+    "icon": "user"
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
     },
-    "attributes": {
-        "name": { "type": "string", "required": true },
-        "avatar": { "type": "media", "multiple": false },
-        "bio": { "type": "text" }
+    "Avatar": {
+      "type": "media",
+      "multiple": false
+    },
+    "Bio": {
+      "type": "text"
     }
+  }
 }

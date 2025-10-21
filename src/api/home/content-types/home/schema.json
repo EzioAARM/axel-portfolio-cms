@@ -90,52 +90,7 @@
       "component": "shared.carousel",
       "repeatable": true
     },
-    "hasNewsletter": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "default": true
-    },
-    "newsletterTitle": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "hasNewsletter"
-            },
-            true
-          ]
-        }
-      }
-    },
-    "newsletterDescription": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "hasNewsletter"
-            },
-            true
-          ]
-        }
-      }
-    },
-    "displayMostRecentPosts": {
+    "HasNewsletter": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
@@ -144,6 +99,72 @@
       },
       "required": true,
       "default": true
+    },
+    "NewsletterTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "HasNewsletter"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "NewsletterDescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "HasNewsletter"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "SubscribeButtonText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Suscribirme"
+    },
+    "DisplayMostRecentPosts": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "SEO": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": true,
+      "required": true
     }
   }
 }

@@ -5,24 +5,70 @@ export interface SharedAuthor extends Struct.ComponentSchema {
   info: {
     description: 'Informaci\u00F3n del autor de posts o proyectos';
     displayName: 'Author';
+    icon: 'user';
   };
   attributes: {
-    avatar: Schema.Attribute.Media;
-    bio: Schema.Attribute.Text;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
+    Avatar: Schema.Attribute.Media;
+    Bio: Schema.Attribute.Text;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 export interface SharedCarousel extends Struct.ComponentSchema {
   collectionName: 'components_shared_carousels';
   info: {
-    displayName: 'Carousel';
+    displayName: 'Image';
+    icon: 'picture';
   };
   attributes: {
-    alt: Schema.Attribute.String & Schema.Attribute.Required;
-    caption: Schema.Attribute.String;
-    url: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
+    Alt: Schema.Attribute.String & Schema.Attribute.Required;
+    Caption: Schema.Attribute.String;
+    Url: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface SharedInstitution extends Struct.ComponentSchema {
+  collectionName: 'components_shared_institutions';
+  info: {
+    displayName: 'Institution';
+    icon: 'book';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    SEO: Schema.Attribute.Component<'shared.seo', true>;
+    Skills: Schema.Attribute.Component<'shared.skill', true> &
+      Schema.Attribute.Required;
+    Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedJob extends Struct.ComponentSchema {
+  collectionName: 'components_shared_jobs';
+  info: {
+    displayName: 'Job';
+    icon: 'briefcase';
+  };
+  attributes: {
+    Achievements: Schema.Attribute.Text & Schema.Attribute.Required;
+    Company: Schema.Attribute.String & Schema.Attribute.Required;
+    Description: Schema.Attribute.Text;
+    Images: Schema.Attribute.Component<'shared.carousel', true>;
+    Role: Schema.Attribute.String & Schema.Attribute.Required;
+    Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLanguage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_languages';
+  info: {
+    displayName: 'Language';
+    icon: 'globe';
+  };
+  attributes: {
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -33,10 +79,10 @@ export interface SharedSeo extends Struct.ComponentSchema {
     displayName: 'SEO';
   };
   attributes: {
-    keywords: Schema.Attribute.JSON;
-    metaDescription: Schema.Attribute.Text;
-    metaImage: Schema.Attribute.Media;
-    metaTitle: Schema.Attribute.String;
+    Keywords: Schema.Attribute.JSON;
+    MetaDescription: Schema.Attribute.Text;
+    MetaImage: Schema.Attribute.Media;
+    MetaTitle: Schema.Attribute.String;
   };
 }
 
@@ -47,11 +93,11 @@ export interface SharedSkill extends Struct.ComponentSchema {
     displayName: 'Skill';
   };
   attributes: {
-    icon: Schema.Attribute.String;
-    level: Schema.Attribute.Enumeration<
+    Icon: Schema.Attribute.String;
+    Level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced', 'expert']
     >;
-    name: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
   };
 }
 
@@ -62,9 +108,9 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
     displayName: 'Social Link';
   };
   attributes: {
-    icon: Schema.Attribute.String;
-    platform: Schema.Attribute.String;
-    url: Schema.Attribute.String;
+    Icon: Schema.Attribute.String;
+    Platform: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
   };
 }
 
@@ -73,6 +119,9 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.author': SharedAuthor;
       'shared.carousel': SharedCarousel;
+      'shared.institution': SharedInstitution;
+      'shared.job': SharedJob;
+      'shared.language': SharedLanguage;
       'shared.seo': SharedSeo;
       'shared.skill': SharedSkill;
       'shared.social-link': SharedSocialLink;

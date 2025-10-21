@@ -442,23 +442,46 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    Bio: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    Languages: Schema.Attribute.Component<'shared.language', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
-    longBio: Schema.Attribute.RichText;
-    profileImage: Schema.Attribute.Media;
+    ProfileImage: Schema.Attribute.Media;
     publishedAt: Schema.Attribute.DateTime;
-    resumeUrl: Schema.Attribute.String;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
-    shortBio: Schema.Attribute.Text;
-    skills: Schema.Attribute.Component<'shared.skill', true>;
-    socialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    SEO: Schema.Attribute.Component<'shared.seo', false>;
+    Skills: Schema.Attribute.Component<'shared.skill', true>;
+    SocialLinks: Schema.Attribute.Component<'shared.social-link', true>;
+    Studies: Schema.Attribute.Component<'shared.institution', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    WorkExperience: Schema.Attribute.Component<'shared.job', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
   };
 }
 
@@ -487,7 +510,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    displayMostRecentPosts: Schema.Attribute.Boolean &
+    DisplayMostRecentPosts: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -515,7 +538,8 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
-    hasNewsletter: Schema.Attribute.Boolean &
+    HasNewsletter: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -531,19 +555,26 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
-    newsletterDescription: Schema.Attribute.String &
+    NewsletterDescription: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    newsletterTitle: Schema.Attribute.String &
+    NewsletterTitle: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'shared.seo', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     SubLine: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -551,6 +582,13 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    SubscribeButtonText: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'Suscribirme'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

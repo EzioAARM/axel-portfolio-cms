@@ -1,31 +1,63 @@
 {
-    "kind": "singleType",
-    "collectionName": "abouts",
-    "info": {
-        "singularName": "about",
-        "pluralName": "abouts",
-        "displayName": "About",
-        "description": "Información personal y profesional"
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": "Información personal y profesional"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProfileImage": {
+      "type": "media",
+      "multiple": false
     },
-    "attributes": {
-        "profileImage": { "type": "media", "multiple": false },
-        "shortBio": { "type": "text" },
-        "longBio": { "type": "richtext" },
-        "skills": {
-            "type": "component",
-            "repeatable": true,
-            "component": "shared.skill"
-        },
-        "resumeUrl": { "type": "string" },
-        "socialLinks": {
-            "type": "component",
-            "repeatable": true,
-            "component": "shared.social-link"
-        },
-        "seo": {
-            "type": "component",
-            "repeatable": false,
-            "component": "shared.seo"
-        }
+    "JobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "Languages": {
+      "type": "component",
+      "component": "shared.language",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    },
+    "SocialLinks": {
+      "type": "component",
+      "component": "shared.social-link",
+      "repeatable": true
+    },
+    "Bio": {
+      "type": "text"
+    },
+    "Skills": {
+      "type": "component",
+      "component": "shared.skill",
+      "repeatable": true
+    },
+    "WorkExperience": {
+      "type": "component",
+      "component": "shared.job",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    },
+    "Studies": {
+      "type": "component",
+      "component": "shared.institution",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
+  }
 }

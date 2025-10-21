@@ -1,15 +1,24 @@
 {
-    "collectionName": "components_shared_skills",
-    "info": {
-        "displayName": "Skill",
-        "description": "Habilidad o tecnología destacada"
+  "collectionName": "components_shared_skills",
+  "info": {
+    "displayName": "Skill",
+    "description": "Habilidad o tecnología destacada"
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
     },
-    "attributes": {
-        "name": { "type": "string" },
-        "level": {
-            "type": "enumeration",
-            "enum": ["beginner", "intermediate", "advanced", "expert"]
-        },
-        "icon": { "type": "string" }
+    "Level": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ]
+    },
+    "Icon": {
+      "type": "string"
     }
+  }
 }

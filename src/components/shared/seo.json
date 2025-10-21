@@ -1,13 +1,22 @@
 {
-    "collectionName": "components_shared_seos",
-    "info": {
-        "displayName": "SEO",
-        "description": "Metadatos para SEO y redes sociales"
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": "Metadatos para SEO y redes sociales"
+  },
+  "attributes": {
+    "MetaTitle": {
+      "type": "string"
     },
-    "attributes": {
-        "metaTitle": { "type": "string" },
-        "metaDescription": { "type": "text" },
-        "metaImage": { "type": "media", "multiple": false },
-        "keywords": { "type": "json" }
+    "MetaDescription": {
+      "type": "text"
+    },
+    "MetaImage": {
+      "type": "media",
+      "multiple": false
+    },
+    "Keywords": {
+      "type": "json"
     }
+  }
 }

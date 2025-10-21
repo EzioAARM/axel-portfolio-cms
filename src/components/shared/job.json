@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_jobs",
+  "info": {
+    "displayName": "Job",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "Company": {
+      "type": "string",
+      "required": true
+    },
+    "Timeframe": {
+      "type": "string",
+      "required": true
+    },
+    "Role": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Achievements": {
+      "type": "text",
+      "required": true
+    },
+    "Images": {
+      "type": "component",
+      "component": "shared.carousel",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
