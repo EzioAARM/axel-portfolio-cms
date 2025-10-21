@@ -14,7 +14,11 @@
   "attributes": {
     "ProfileImage": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "JobTitle": {
       "type": "string",
