@@ -35,7 +35,6 @@ export interface SharedInstitution extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     SEO: Schema.Attribute.Component<'shared.seo', true>;
     Skills: Schema.Attribute.Component<'shared.skill', true> &
@@ -54,7 +53,6 @@ export interface SharedJob extends Struct.ComponentSchema {
   attributes: {
     Achievements: Schema.Attribute.Text & Schema.Attribute.Required;
     Company: Schema.Attribute.String & Schema.Attribute.Required;
-    Description: Schema.Attribute.Text;
     Images: Schema.Attribute.Component<'shared.carousel', true>;
     Role: Schema.Attribute.String & Schema.Attribute.Required;
     Timeframe: Schema.Attribute.String & Schema.Attribute.Required;

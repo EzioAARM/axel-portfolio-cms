@@ -36,8 +36,9 @@
       "component": "shared.social-link",
       "repeatable": true
     },
-    "Bio": {
-      "type": "text"
+    "Biography": {
+      "type": "richtext",
+      "required": true
     },
     "Skills": {
       "type": "component",

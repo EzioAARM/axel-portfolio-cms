@@ -18,10 +18,6 @@
       "type": "string",
       "required": true
     },
-    "Description": {
-      "type": "text",
-      "required": true
-    },
     "Skills": {
       "type": "component",
       "component": "shared.skill",
