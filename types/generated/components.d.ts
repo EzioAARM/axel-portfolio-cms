@@ -70,17 +70,73 @@ export interface SharedLanguage extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMetaSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_meta_socials';
+  info: {
+    displayName: 'Meta Social';
+    icon: 'share-square';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
-    description: 'Metadatos para SEO y redes sociales';
+    description: '';
     displayName: 'SEO';
+    icon: 'search-plus';
   };
   attributes: {
-    Keywords: Schema.Attribute.JSON;
-    MetaDescription: Schema.Attribute.Text;
-    MetaImage: Schema.Attribute.Media;
-    MetaTitle: Schema.Attribute.String;
+    canonicalURL: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    keywords: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaRobots: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    metaSocial: Schema.Attribute.Component<'shared.meta-social', true>;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
   };
 }
 
@@ -120,6 +176,7 @@ declare module '@strapi/strapi' {
       'shared.institution': SharedInstitution;
       'shared.job': SharedJob;
       'shared.language': SharedLanguage;
+      'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
       'shared.skill': SharedSkill;
       'shared.social-link': SharedSocialLink;

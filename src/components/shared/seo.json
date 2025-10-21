@@ -2,21 +2,73 @@
   "collectionName": "components_shared_seos",
   "info": {
     "displayName": "SEO",
-    "description": "Metadatos para SEO y redes sociales"
+    "icon": "search-plus",
+    "description": ""
   },
+  "options": {},
   "attributes": {
-    "MetaTitle": {
-      "type": "string"
+    "metaTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "maxLength": 60,
+      "required": true,
+      "unique": false
     },
-    "MetaDescription": {
-      "type": "text"
+    "metaDescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "maxLength": 160,
+      "required": true
     },
-    "MetaImage": {
+    "metaImage": {
       "type": "media",
-      "multiple": false
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "Keywords": {
-      "type": "json"
+    "canonicalURL": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "metaRobots": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "keywords": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "metaSocial": {
+      "type": "component",
+      "component": "shared.meta-social",
+      "repeatable": true
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+    "kind": "component",
+    "collectionName": "components_shared_meta_socials",
+    "info": {
+        "displayName": "Meta Social",
+        "icon": "share-square"
+    },
+    "options": {},
+    "attributes": {
+        "socialNetwork": {
+            "type": "enumeration",
+            "enum": ["Facebook", "X", "LinkedIn"]
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": ["images"]
+        }
+    }
+}

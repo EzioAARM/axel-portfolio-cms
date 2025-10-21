@@ -59,7 +59,7 @@
       "required": true,
       "min": 1
     },
-    "SEO": {
+    "seo": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": false

@@ -460,7 +460,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     ProfileImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'shared.seo', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Skills: Schema.Attribute.Component<'shared.skill', true>;
     SocialLinks: Schema.Attribute.Component<'shared.social-link', true>;
     Studies: Schema.Attribute.Component<'shared.institution', true> &
@@ -568,13 +568,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    SEO: Schema.Attribute.Component<'shared.seo', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     SubLine: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
