@@ -6,10 +6,12 @@
   },
   "attributes": {
     "Name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Level": {
       "type": "enumeration",
+      "required": true,
       "enum": [
         "beginner",
         "intermediate",
@@ -18,7 +20,12 @@
       ]
     },
     "Icon": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

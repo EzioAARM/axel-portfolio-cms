@@ -9,6 +9,14 @@
     "Name": {
       "type": "string",
       "required": true
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

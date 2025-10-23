@@ -71,7 +71,7 @@
       "default": true
     },
     "Carousel": {
-      "type": "component",
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -87,8 +87,10 @@
           ]
         }
       },
-      "component": "shared.carousel",
-      "repeatable": true
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "HasNewsletter": {
       "type": "boolean",
@@ -97,7 +99,7 @@
           "localized": true
         }
       },
-      "required": true,
+      "required": false,
       "default": true
     },
     "NewsletterTitle": {
@@ -152,8 +154,18 @@
           "localized": true
         }
       },
-      "required": true,
+      "required": false,
       "default": true
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

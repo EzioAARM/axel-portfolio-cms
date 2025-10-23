@@ -18,14 +18,17 @@
       "type": "string",
       "required": true
     },
-    "Achievements": {
-      "type": "text",
+    "Description": {
+      "type": "richtext",
       "required": true
     },
-    "Images": {
-      "type": "component",
-      "component": "shared.carousel",
-      "repeatable": true
+    "Carousel": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   },
   "config": {}

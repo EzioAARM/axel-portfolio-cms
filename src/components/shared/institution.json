@@ -18,16 +18,22 @@
       "type": "string",
       "required": true
     },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
     "Skills": {
       "type": "component",
       "component": "shared.skill",
       "repeatable": true,
       "required": true
     },
-    "SEO": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": true
+    "Carousel": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

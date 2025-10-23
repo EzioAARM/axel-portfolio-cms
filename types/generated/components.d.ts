@@ -14,20 +14,6 @@ export interface SharedAuthor extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedCarousel extends Struct.ComponentSchema {
-  collectionName: 'components_shared_carousels';
-  info: {
-    displayName: 'Image';
-    icon: 'picture';
-  };
-  attributes: {
-    Alt: Schema.Attribute.String & Schema.Attribute.Required;
-    Caption: Schema.Attribute.String;
-    Url: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
-      Schema.Attribute.Required;
-  };
-}
-
 export interface SharedInstitution extends Struct.ComponentSchema {
   collectionName: 'components_shared_institutions';
   info: {
@@ -35,8 +21,9 @@ export interface SharedInstitution extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
+    Carousel: Schema.Attribute.Media<'images', true>;
+    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
-    SEO: Schema.Attribute.Component<'shared.seo', true>;
     Skills: Schema.Attribute.Component<'shared.skill', true> &
       Schema.Attribute.Required;
     Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
@@ -51,9 +38,9 @@ export interface SharedJob extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
-    Achievements: Schema.Attribute.Text & Schema.Attribute.Required;
+    Carousel: Schema.Attribute.Media<'images' | 'files', true>;
     Company: Schema.Attribute.String & Schema.Attribute.Required;
-    Images: Schema.Attribute.Component<'shared.carousel', true>;
+    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
     Role: Schema.Attribute.String & Schema.Attribute.Required;
     Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -66,6 +53,7 @@ export interface SharedLanguage extends Struct.ComponentSchema {
     icon: 'globe';
   };
   attributes: {
+    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -79,7 +67,7 @@ export interface SharedMetaSocial extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
-    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'Twitter']>;
+    socialNetwork: Schema.Attribute.Enumeration<['Facebook', 'X', 'LinkedIn']>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -147,11 +135,12 @@ export interface SharedSkill extends Struct.ComponentSchema {
     displayName: 'Skill';
   };
   attributes: {
-    Icon: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     Level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced', 'expert']
-    >;
-    Name: Schema.Attribute.String;
+    > &
+      Schema.Attribute.Required;
+    Name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -162,9 +151,9 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
     displayName: 'Social Link';
   };
   attributes: {
-    Icon: Schema.Attribute.String;
-    Platform: Schema.Attribute.String;
-    Url: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    Platform: Schema.Attribute.String & Schema.Attribute.Required;
+    Url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -172,7 +161,6 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.author': SharedAuthor;
-      'shared.carousel': SharedCarousel;
       'shared.institution': SharedInstitution;
       'shared.job': SharedJob;
       'shared.language': SharedLanguage;

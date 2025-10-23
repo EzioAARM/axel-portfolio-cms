@@ -6,13 +6,20 @@
   },
   "attributes": {
     "Platform": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Url": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Icon": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
