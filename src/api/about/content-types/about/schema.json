@@ -12,6 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "IntroductionSectionTitle": {
+      "type": "string",
+      "default": "Introducción",
+      "required": true
+    },
     "ProfileImage": {
       "type": "media",
       "multiple": false,
@@ -40,10 +45,10 @@
       "type": "richtext",
       "required": true
     },
-    "Skills": {
-      "type": "component",
-      "component": "shared.skill",
-      "repeatable": true
+    "ExperienceSectionTitle": {
+      "type": "string",
+      "default": "Experiencia laboral",
+      "required": true
     },
     "WorkExperience": {
       "type": "component",
@@ -52,12 +57,27 @@
       "required": true,
       "min": 1
     },
+    "EducationSectionTitle": {
+      "type": "string",
+      "default": "Educación",
+      "required": true
+    },
     "Studies": {
       "type": "component",
       "component": "shared.institution",
       "repeatable": true,
       "required": true,
       "min": 1
+    },
+    "TechnicalSkillsSectionTitle": {
+      "type": "string",
+      "default": "Habilidades",
+      "required": true
+    },
+    "Skills": {
+      "type": "component",
+      "component": "shared.skill",
+      "repeatable": true
     },
     "seo": {
       "type": "component",

@@ -6,20 +6,59 @@
   },
   "attributes": {
     "Platform": {
-      "type": "string",
-      "required": true
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Github",
+        "LinkedIn",
+        "Facebook",
+        "Pinterest",
+        "WhatsApp",
+        "Telegram",
+        "Reddit",
+        "Email",
+        "Instagram"
+      ]
     },
     "Url": {
       "type": "string",
       "required": true
     },
+    "UseIcon": {
+      "type": "boolean",
+      "default": false
+    },
     "Icon": {
       "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "UseIcon"
+            },
+            true
+          ]
+        }
+      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
         "images"
       ]
+    },
+    "CssClass": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "UseIcon"
+            },
+            false
+          ]
+        }
+      },
+      "required": true
     }
   }
 }

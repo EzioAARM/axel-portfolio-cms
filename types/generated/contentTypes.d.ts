@@ -446,6 +446,15 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    EducationSectionTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Educaci\u00F3n'>;
+    ExperienceSectionTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Experiencia laboral'>;
+    IntroductionSectionTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Introducci\u00F3n'>;
     JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
     Languages: Schema.Attribute.Component<'shared.language', true> &
       Schema.Attribute.Required &
@@ -471,6 +480,9 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         },
         number
       >;
+    TechnicalSkillsSectionTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Habilidades'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

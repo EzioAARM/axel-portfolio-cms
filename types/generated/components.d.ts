@@ -53,7 +53,11 @@ export interface SharedLanguage extends Struct.ComponentSchema {
     icon: 'globe';
   };
   attributes: {
-    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    Icon: Schema.Attribute.Media<'images'>;
+    Level: Schema.Attribute.Enumeration<
+      ['Beginner', 'Intermediate', 'Advanced', 'Native/Fluent']
+    > &
+      Schema.Attribute.Required;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -135,7 +139,9 @@ export interface SharedSkill extends Struct.ComponentSchema {
     displayName: 'Skill';
   };
   attributes: {
-    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    Group: Schema.Attribute.Enumeration<['Technical', 'Soft', 'Other']> &
+      Schema.Attribute.Required;
+    Icon: Schema.Attribute.Media<'images'>;
     Level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced', 'expert']
     > &
@@ -151,9 +157,24 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
     displayName: 'Social Link';
   };
   attributes: {
+    CssClass: Schema.Attribute.String & Schema.Attribute.Required;
     Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    Platform: Schema.Attribute.String & Schema.Attribute.Required;
+    Platform: Schema.Attribute.Enumeration<
+      [
+        'Github',
+        'LinkedIn',
+        'Facebook',
+        'Pinterest',
+        'WhatsApp',
+        'Telegram',
+        'Reddit',
+        'Email',
+        'Instagram',
+      ]
+    > &
+      Schema.Attribute.Required;
     Url: Schema.Attribute.String & Schema.Attribute.Required;
+    UseIcon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 

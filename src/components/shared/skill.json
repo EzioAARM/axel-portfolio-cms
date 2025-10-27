@@ -19,10 +19,19 @@
         "expert"
       ]
     },
+    "Group": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Technical",
+        "Soft",
+        "Other"
+      ]
+    },
     "Icon": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

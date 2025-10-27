@@ -10,10 +10,20 @@
       "type": "string",
       "required": true
     },
+    "Level": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Beginner",
+        "Intermediate",
+        "Advanced",
+        "Native/Fluent"
+      ]
+    },
     "Icon": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
