@@ -1,13 +1,37 @@
 {
-    "collectionName": "technologies",
-    "info": {
-        "singularName": "technology",
-        "pluralName": "technologies",
-        "displayName": "Technology"
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "singularName": "technology",
+    "pluralName": "technologies",
+    "displayName": "Technology"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
     },
-    "attributes": {
-        "name": { "type": "string", "required": true },
-        "icon": { "type": "string" },
-        "website": { "type": "string" }
+    "icon": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "technologies"
+    },
+    "slug": {
+      "type": "uid",
+      "private": true,
+      "targetField": "name",
+      "required": true
     }
+  }
 }

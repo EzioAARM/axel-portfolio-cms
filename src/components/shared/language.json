@@ -6,11 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Level": {
+    "level": {
       "type": "enumeration",
       "required": true,
       "enum": [
@@ -20,7 +20,7 @@
         "Native/Fluent"
       ]
     },
-    "Icon": {
+    "icon": {
       "type": "media",
       "multiple": false,
       "required": false,

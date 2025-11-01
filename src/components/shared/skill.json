@@ -5,11 +5,11 @@
     "description": "Habilidad o tecnología destacada"
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Level": {
+    "level": {
       "type": "enumeration",
       "required": true,
       "enum": [
@@ -19,7 +19,7 @@
         "expert"
       ]
     },
-    "Group": {
+    "group": {
       "type": "enumeration",
       "required": true,
       "enum": [
@@ -28,7 +28,7 @@
         "Other"
       ]
     },
-    "Icon": {
+    "icon": {
       "type": "media",
       "multiple": false,
       "required": false,

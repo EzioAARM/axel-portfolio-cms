@@ -8,79 +8,148 @@
     "description": "Información personal y profesional"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "IntroductionSectionTitle": {
+    "introductionSectionTitle": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "Introducción",
       "required": true
     },
-    "ProfileImage": {
+    "profileImage": {
       "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
         "images"
       ]
     },
-    "JobTitle": {
+    "jobTitle": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     },
-    "Languages": {
+    "languages": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.language",
       "repeatable": true,
       "required": true,
       "min": 1
     },
-    "SocialLinks": {
+    "socialLinks": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.social-link",
       "repeatable": true
     },
-    "Biography": {
+    "biography": {
       "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true
     },
-    "ExperienceSectionTitle": {
+    "experienceSectionTitle": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "Experiencia laboral",
       "required": true
     },
-    "WorkExperience": {
+    "workExperience": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.job",
       "repeatable": true,
       "required": true,
       "min": 1
     },
-    "EducationSectionTitle": {
+    "educationSectionTitle": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "Educación",
       "required": true
     },
-    "Studies": {
+    "studies": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.institution",
       "repeatable": true,
       "required": true,
       "min": 1
     },
-    "TechnicalSkillsSectionTitle": {
+    "technicalSkillsSectionTitle": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "Habilidades",
       "required": true
     },
-    "Skills": {
+    "skills": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.skill",
       "repeatable": true
     },
     "seo": {
       "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "component": "shared.seo",
       "repeatable": false
     }

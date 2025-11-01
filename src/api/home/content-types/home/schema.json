@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "Headline": {
+    "headline": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -24,7 +24,7 @@
       },
       "required": true
     },
-    "HasFeatured": {
+    "hasFeatured": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
@@ -34,7 +34,7 @@
       "required": false,
       "default": false
     },
-    "Featured": {
+    "featured": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -45,14 +45,14 @@
         "visible": {
           "==": [
             {
-              "var": "HasFeatured"
+              "var": "hasFeatured"
             },
             true
           ]
         }
       }
     },
-    "SubLine": {
+    "subLine": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
@@ -61,7 +61,7 @@
       },
       "required": true
     },
-    "HasCarousel": {
+    "hasCarousel": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
@@ -70,18 +70,18 @@
       },
       "default": true
     },
-    "Carousel": {
+    "carousel": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "conditions": {
         "visible": {
           "==": [
             {
-              "var": "HasCarousel"
+              "var": "hasCarousel"
             },
             true
           ]
@@ -92,7 +92,7 @@
         "images"
       ]
     },
-    "HasNewsletter": {
+    "hasNewsletter": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
@@ -102,7 +102,7 @@
       "required": false,
       "default": true
     },
-    "NewsletterTitle": {
+    "newsletterTitle": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -113,14 +113,14 @@
         "visible": {
           "==": [
             {
-              "var": "HasNewsletter"
+              "var": "hasNewsletter"
             },
             true
           ]
         }
       }
     },
-    "NewsletterDescription": {
+    "newsletterDescription": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -131,14 +131,14 @@
         "visible": {
           "==": [
             {
-              "var": "HasNewsletter"
+              "var": "hasNewsletter"
             },
             true
           ]
         }
       }
     },
-    "SubscribeButtonText": {
+    "subscribeButtonText": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -147,11 +147,11 @@
       },
       "default": "Suscribirme"
     },
-    "DisplayMostRecentPosts": {
+    "displayMostRecentPosts": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "required": false,

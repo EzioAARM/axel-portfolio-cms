@@ -5,7 +5,7 @@
     "description": "Red social o enlace externo"
   },
   "attributes": {
-    "Platform": {
+    "platform": {
       "type": "enumeration",
       "required": true,
       "enum": [
@@ -20,21 +20,21 @@
         "Instagram"
       ]
     },
-    "Url": {
+    "url": {
       "type": "string",
       "required": true
     },
-    "UseIcon": {
+    "useIcon": {
       "type": "boolean",
       "default": false
     },
-    "Icon": {
+    "icon": {
       "type": "media",
       "conditions": {
         "visible": {
           "==": [
             {
-              "var": "UseIcon"
+              "var": "useIcon"
             },
             true
           ]
@@ -46,15 +46,15 @@
         "images"
       ]
     },
-    "CssClass": {
+    "cssClass": {
       "type": "string",
       "conditions": {
         "visible": {
           "==": [
             {
-              "var": "UseIcon"
+              "var": "useIcon"
             },
-            false
+            true
           ]
         }
       },

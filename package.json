@@ -15,6 +15,7 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
+    "@sklinet/strapi-plugin-tinymce": "^1.1.7",
     "@strapi/plugin-cloud": "5.28.0",
     "@strapi/plugin-seo": "^2.0.8",
     "@strapi/plugin-users-permissions": "5.28.0",
@@ -26,6 +27,7 @@
     "strapi-plugin-auto-slug-manager-a-mi13": "^1.1.0",
     "strapi-plugin-populate-all": "^1.2.3",
     "strapi-plugin-populate-deep": "^3.0.1",
+    "strapi-plugin-strapi-algolia": "^2.0.4",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {

@@ -1,19 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedAuthor extends Struct.ComponentSchema {
-  collectionName: 'components_shared_authors';
-  info: {
-    description: 'Informaci\u00F3n del autor de posts o proyectos';
-    displayName: 'Author';
-    icon: 'user';
-  };
-  attributes: {
-    Avatar: Schema.Attribute.Media;
-    Bio: Schema.Attribute.Text;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedInstitution extends Struct.ComponentSchema {
   collectionName: 'components_shared_institutions';
   info: {
@@ -21,13 +7,13 @@ export interface SharedInstitution extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
-    Carousel: Schema.Attribute.Media<'images', true>;
-    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-    Skills: Schema.Attribute.Component<'shared.skill', true> &
+    carousel: Schema.Attribute.Media<'images', true>;
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    skills: Schema.Attribute.Component<'shared.skill', true> &
       Schema.Attribute.Required;
-    Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    timeframe: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -38,11 +24,11 @@ export interface SharedJob extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
-    Carousel: Schema.Attribute.Media<'images' | 'files', true>;
-    Company: Schema.Attribute.String & Schema.Attribute.Required;
-    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
-    Role: Schema.Attribute.String & Schema.Attribute.Required;
-    Timeframe: Schema.Attribute.String & Schema.Attribute.Required;
+    carousel: Schema.Attribute.Media<'images' | 'files', true>;
+    company: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+    timeframe: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -53,12 +39,12 @@ export interface SharedLanguage extends Struct.ComponentSchema {
     icon: 'globe';
   };
   attributes: {
-    Icon: Schema.Attribute.Media<'images'>;
-    Level: Schema.Attribute.Enumeration<
+    icon: Schema.Attribute.Media<'images'>;
+    level: Schema.Attribute.Enumeration<
       ['Beginner', 'Intermediate', 'Advanced', 'Native/Fluent']
     > &
       Schema.Attribute.Required;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -139,14 +125,14 @@ export interface SharedSkill extends Struct.ComponentSchema {
     displayName: 'Skill';
   };
   attributes: {
-    Group: Schema.Attribute.Enumeration<['Technical', 'Soft', 'Other']> &
+    group: Schema.Attribute.Enumeration<['Technical', 'Soft', 'Other']> &
       Schema.Attribute.Required;
-    Icon: Schema.Attribute.Media<'images'>;
-    Level: Schema.Attribute.Enumeration<
+    icon: Schema.Attribute.Media<'images'>;
+    level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced', 'expert']
     > &
       Schema.Attribute.Required;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -157,9 +143,9 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
     displayName: 'Social Link';
   };
   attributes: {
-    CssClass: Schema.Attribute.String & Schema.Attribute.Required;
-    Icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    Platform: Schema.Attribute.Enumeration<
+    cssClass: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    platform: Schema.Attribute.Enumeration<
       [
         'Github',
         'LinkedIn',
@@ -173,15 +159,14 @@ export interface SharedSocialLink extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.Required;
-    Url: Schema.Attribute.String & Schema.Attribute.Required;
-    UseIcon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+    useIcon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.author': SharedAuthor;
       'shared.institution': SharedInstitution;
       'shared.job': SharedJob;
       'shared.language': SharedLanguage;

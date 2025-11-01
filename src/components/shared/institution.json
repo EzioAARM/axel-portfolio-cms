@@ -6,29 +6,29 @@
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Timeframe": {
+    "timeframe": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "richtext",
       "required": true
     },
-    "Skills": {
+    "skills": {
       "type": "component",
       "component": "shared.skill",
       "repeatable": true,
       "required": true
     },
-    "Carousel": {
+    "carousel": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [

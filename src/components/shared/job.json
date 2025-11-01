@@ -6,23 +6,23 @@
   },
   "options": {},
   "attributes": {
-    "Company": {
+    "company": {
       "type": "string",
       "required": true
     },
-    "Timeframe": {
+    "timeframe": {
       "type": "string",
       "required": true
     },
-    "Role": {
+    "role": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "richtext",
       "required": true
     },
-    "Carousel": {
+    "carousel": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
