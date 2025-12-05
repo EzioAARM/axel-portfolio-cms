@@ -52,6 +52,24 @@
         }
       }
     },
+    "featuredLink": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasFeatured"
+            },
+            true
+          ]
+        }
+      }
+    },
     "subLine": {
       "type": "richtext",
       "pluginOptions": {

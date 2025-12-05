@@ -658,6 +658,12 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    featuredLink: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     hasCarousel: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
